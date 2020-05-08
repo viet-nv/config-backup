@@ -1,0 +1,1 @@
+/home/lielos/.config/nvim/init.vim
