@@ -192,7 +192,6 @@ set laststatus=2
 "       \ },
 "       \ }
 let g:lightline = {
-      \ 'colorscheme': 'quantum',
       \ 'active': {
       \   'left': [ ['mode'], ['fileicon'], [ 'cocstatus' ], [ 'filename' ] ],
       \   'right': [ [ 'icongitbranch' ], [ 'lineinfo' ] ]
