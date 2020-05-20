@@ -1,8 +1,10 @@
 # Vim
 sudo apt install vim
 
-# install ibus
-sudo apt install ibus-unikey
+# install ibus bamboo
+sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
+sudo apt update
+sudo apt install ibus-bamboo
 ibus restart
 
 # Alacritty
@@ -51,3 +53,8 @@ sudo apt install tmux
 
 mkdir -p ~/.config/alacritty && touch ~/.config/alacritty/alacritty.yml
 touch .tmux.conf
+
+# change watch files
+sudo echo fs.inotify.max_user_watches = 524288 >> /etc/sysctl.conf
+sudo sysctl -p
+

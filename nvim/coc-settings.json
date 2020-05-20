@@ -33,5 +33,14 @@
   },
   "typescript.showUnused": true,
   "javascript.showUnused": true,
-  "coc.preferences.formatOnSaveFiletypes":["typescript", "javascript", "typescriptreact", "rust", "scss", "css", "json"]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "typescript",
+    "javascript",
+    "typescriptreact",
+    "rust",
+    "scss",
+    "css",
+    "json",
+    "html"
+  ]
 }

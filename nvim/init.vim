@@ -211,6 +211,15 @@ let g:lightline = {
       \ },
       \ }
 
+let g:coc_global_extensions = [
+      \'coc-prettier',
+      \'coc-tsserver',
+      \'coc-rls',
+      \'coc-highlight',
+      \]
+
+
+
 " Use auocmd to force lightline update.
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
