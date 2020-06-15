@@ -30,6 +30,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Shougo/denite.nvim'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'lifepillar/vim-solarized8'
+Plug 'Yggdroot/indentLine'
 
 " Moving around easier
 Plug 'easymotion/vim-easymotion'
