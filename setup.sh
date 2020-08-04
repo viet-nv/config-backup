@@ -5,11 +5,8 @@ sudo apt install ibus-bamboo
 ibus restart
 
 # Alacritty
-sudo add-apt-repository ppa:mmstick76/alacritty
-sudo apt install alacritty
-
-# Git
-sudo apt install git
+# sudo add-apt-repository ppa:mmstick76/alacritty
+# sudo apt install alacritty
 
 # curl
 sudo apt install curl
@@ -21,13 +18,13 @@ sudo apt install -y nodejs
 # Yarn
 curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update && sudo apt-get install yarn
+sudo apt update && sudo apt install yarn
 
 # nvim
-wget https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage --output-document nvim
-chmod +x nvim
-sudo chown root:root nvim
-sudo mv nvim /usr/bin
+wget https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage --output-document neovim
+chmod +x neovim
+sudo chown root:root neovim
+sudo mv neovim /usr/bin/nvim
 
 # vim-plug for nvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -50,9 +47,18 @@ cd
 # tmux
 sudo apt install tmux
 
-mkdir -p ~/.config/alacritty && touch ~/.config/alacritty/alacritty.yml
+# mkdir -p ~/.config/alacritty && touch ~/.config/alacritty/alacritty.yml
 touch .tmux.conf
+cp ./.tmux.conf ~/.tmux.conf
+
+cp ./.bashrc ~/.bashrc
+
+cp -r nvim/ ~/.config/
 
 # change watch files
 sudo echo fs.inotify.max_user_watches = 524288 >> /etc/sysctl.conf
 sudo sysctl -p
+
+sudo apt update
+sudo apt install -y python3-dev python3-pip python3-setuptools
+sudo pip3 install thefuck
