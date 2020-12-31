@@ -45,6 +45,8 @@ Plug 'terryma/vim-multiple-cursors'
 " Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
 call plug#end()
 
 filetype plugin indent on
@@ -125,7 +127,7 @@ let NERDTreeShowHidden=1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -138,7 +140,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeStatusShowIgnored = 1
 
 " gitgutter
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
@@ -410,5 +412,3 @@ let g:coc_snippet_prev = '<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
-
-

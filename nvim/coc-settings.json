@@ -41,7 +41,8 @@
     "scss",
     "css",
     "json",
-    "html"
+    "html",
+    "markdown"
   ],
   "snippets.extends": {
     "javascriptreact": ["javascript"],
