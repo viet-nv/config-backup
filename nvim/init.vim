@@ -31,6 +31,7 @@ Plug 'Shougo/denite.nvim'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'lifepillar/vim-solarized8'
 Plug 'Yggdroot/indentLine'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 " Moving around easier
 Plug 'easymotion/vim-easymotion'
@@ -46,6 +47,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'honza/vim-snippets'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+Plug 'dart-lang/dart-vim-plugin'
 
 call plug#end()
 
@@ -65,7 +68,7 @@ set mouse=a " enable mouse for all mode
 set wildoptions=pum
 set pumblend=20
 set cursorline
-set foldmethod=indent
+set foldmethod=marker
 set foldlevel=99
 set noswapfile
 set nojoinspaces
@@ -80,11 +83,11 @@ set pyxversion=3
 set ttimeoutlen=10
 
 set termguicolors
-set background=dark
-let g:quantum_italics=1
+" set background=dark
+" let g:quantum_italics=1
 " colorscheme quantum
-colorscheme solarized8_high
-
+" colorscheme solarized8_high
+colorscheme challenger_deep
 
 set shortmess+=c
 set signcolumn=yes
@@ -223,6 +226,7 @@ let g:coc_global_extensions = [
       \'coc-rls',
       \'coc-highlight',
       \'coc-snippets',
+      \'coc-flutter',
       \]
 
 " Use auocmd to force lightline update.
@@ -412,3 +416,4 @@ let g:coc_snippet_prev = '<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+

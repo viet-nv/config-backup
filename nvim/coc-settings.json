@@ -42,11 +42,14 @@
     "css",
     "json",
     "html",
-    "markdown"
+    "markdown",
+    "dart"
   ],
   "snippets.extends": {
     "javascriptreact": ["javascript"],
     "typescriptreact": ["javascript", "javascript-jasmine-arrow"],
     "typescript": ["javascript", "javascript-jasmine-arrow"]
-  }
+  },
+  "flutter.openDevLogSplitCommand": "botright 10split",
+  "flutter.autoOpenDevLog": true
 }
