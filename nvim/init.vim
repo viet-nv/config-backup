@@ -42,6 +42,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'alvan/vim-closetag'
+Plug 'AndrewRadev/tagalong.vim'
 
 " Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -53,6 +55,8 @@ Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 filetype plugin indent on
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char=  '│' "'⎸'
 
 " Auto remove trailing spaces
 autocmd BufWritePre * %s/\s\+$//e
@@ -85,9 +89,9 @@ set ttimeoutlen=10
 set termguicolors
 " set background=dark
 " let g:quantum_italics=1
-" colorscheme quantum
-" colorscheme solarized8_high
-colorscheme challenger_deep
+colorscheme quantum
+" colorscheme solarized8
+" colorscheme challenger_deep
 
 set shortmess+=c
 set signcolumn=yes
@@ -112,6 +116,13 @@ nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+if has("mac") || has("macunix")
+  nmap <D-j> <M-j>
+  nmap <D-k> <M-k>
+  vmap <D-j> <M-j>
+  vmap <D-k> <M-k>
+endif
 
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -417,3 +428,19 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
+
+
+" auto close tag
+autocmd BufNewFile,BufRead *.js set filetype=javascript.jsx
+autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.tsx'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.tsx'
+
+let g:closetag_filetypes = 'html,xhtml,phtml,javascript.jsx,jsx,tsx'
+let g:closetag_xhtml_filetypes = 'xhtml,javascript.jsx,jsx,tsx'
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
